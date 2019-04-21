@@ -33,6 +33,7 @@
             this.Settings = new System.Windows.Forms.Button();
             this.savebtn = new System.Windows.Forms.Button();
             this.help = new System.Windows.Forms.Button();
+            this.notif = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Loadbtn
@@ -53,6 +54,7 @@
             this.restorebtn.TabIndex = 1;
             this.restorebtn.Text = "Restore Settings";
             this.restorebtn.UseVisualStyleBackColor = true;
+            this.restorebtn.Click += new System.EventHandler(this.restorebtn_Click);
             // 
             // Settings
             // 
@@ -83,11 +85,20 @@
             this.help.Text = "?";
             this.help.UseVisualStyleBackColor = true;
             // 
+            // notif
+            // 
+            this.notif.Enabled = false;
+            this.notif.Location = new System.Drawing.Point(239, 180);
+            this.notif.Name = "notif";
+            this.notif.Size = new System.Drawing.Size(100, 20);
+            this.notif.TabIndex = 5;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 202);
+            this.Controls.Add(this.notif);
             this.Controls.Add(this.help);
             this.Controls.Add(this.savebtn);
             this.Controls.Add(this.Settings);
@@ -95,7 +106,9 @@
             this.Controls.Add(this.Loadbtn);
             this.Name = "Form2";
             this.Text = "LeagueConfig";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,5 +119,6 @@
         private System.Windows.Forms.Button Settings;
         private System.Windows.Forms.Button savebtn;
         private System.Windows.Forms.Button help;
+        private System.Windows.Forms.TextBox notif;
     }
 }

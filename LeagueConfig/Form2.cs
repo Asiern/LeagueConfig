@@ -30,12 +30,24 @@ namespace LeagueConfig
             try
             {
                 string filename = System.IO.Path.GetFileName(Properties.Settings.Default.settingspath);
-                string source = @Properties.Settings.Default.settingspath;
-                string savelocation = Properties.Settings.Default.savepath;
-                var destination = Path.Combine(savelocation,filename);
+                string source = Properties.Settings.Default.settingspath;
+                string foldername = "LeagueConfig";
+                //Dest
+                var destinationpath = Path.Combine(Path.GetDirectoryName(source),foldername);
+                var destination = Path.Combine(destinationpath,filename);
+
+                //Create folder
+                System.IO.Directory.CreateDirectory(destinationpath);
 
                 //Copy
-                System.IO.File.Copy(source, destination, false);
+                System.IO.File.Copy(source, destination, true);
+
+                //Save Settings
+                Properties.Settings.Default.LeagueConfigdir = destinationpath;
+                Properties.Settings.Default.settingspath = source;
+                Properties.Settings.Default.Save();
+
+                notif.Text = "Settings Saved";
 
             }
 
@@ -50,13 +62,23 @@ namespace LeagueConfig
             try
             {
                 string filename = System.IO.Path.GetFileName(Properties.Settings.Default.settingspath);
-                string destination = @Properties.Settings.Default.settingspath;
-                string savelocation = Properties.Settings.Default.savepath;
-                var source = Path.Combine(savelocation, filename);
+                string sourcefile = Path.Combine(Properties.Settings.Default.LeagueConfigdir,filename);
+                string destinationfile = Properties.Settings.Default.settingspath;
+                string backupdir = Path.Combine(Properties.Settings.Default.LeagueConfigdir, "BackupConfig");
+
+                //Create Backup Folder
+                System.IO.Directory.CreateDirectory(backupdir);
+                //Backup Settings
+                System.IO.File.Copy(destinationfile, Path.Combine(backupdir,filename), true);
 
                 //Copy
-                System.IO.File.Copy(source, destination, false);
+                System.IO.File.Copy(sourcefile, destinationfile, true);
 
+                //Save Settings
+                Properties.Settings.Default.Backupdir = backupdir;
+                Properties.Settings.Default.Save();
+
+                notif.Text = "Settings Loaded";
             }
 
             catch (Exception ex)
@@ -64,5 +86,31 @@ namespace LeagueConfig
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void restorebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filename = System.IO.Path.GetFileName(Properties.Settings.Default.settingspath);
+                string backupdir = Properties.Settings.Default.Backupdir;
+                string destination = Properties.Settings.Default.settingspath;
+
+                //Copy
+                System.IO.File.Copy(Path.Combine(backupdir, filename), destination, true);
+
+                notif.Text = "Settings Restored";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+   
+
+    private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -5,7 +5,10 @@
     <Setting Name="settingspath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="savepath" Type="System.String" Scope="User">
+    <Setting Name="LeagueConfigdir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Backupdir" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

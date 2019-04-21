@@ -34,9 +34,9 @@ namespace LeagueConfig
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                Properties.Settings.Default.savepath = folderBrowserDialog1.SelectedPath.ToString();
+                Properties.Settings.Default.LeagueConfigdir = folderBrowserDialog1.SelectedPath.ToString();
                 Properties.Settings.Default.Save();
-                savepath.Text = Properties.Settings.Default.savepath;
+                savepath.Text = Properties.Settings.Default.LeagueConfigdir;
                 Properties.Settings.Default.Save();
             }
         }
@@ -50,7 +50,7 @@ namespace LeagueConfig
         private void Form1_Load(object sender, EventArgs e)
         {
             int a = 0;
-            if (Properties.Settings.Default.savepath != null && Properties.Settings.Default.settingspath != null)
+            if (Properties.Settings.Default.LeagueConfigdir != null && Properties.Settings.Default.settingspath != null)
             {
                 a = 1;
                 Program.OpenDetailFormOnClose = true;
@@ -58,7 +58,7 @@ namespace LeagueConfig
             }
             else
             {
-                savepath.Text = Properties.Settings.Default.savepath;
+                savepath.Text = Properties.Settings.Default.LeagueConfigdir;
                 settingspath.Text = Properties.Settings.Default.settingspath;
             }
         }

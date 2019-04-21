@@ -38,12 +38,24 @@ namespace LeagueConfig.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string savepath {
+        public string LeagueConfigdir {
             get {
-                return ((string)(this["savepath"]));
+                return ((string)(this["LeagueConfigdir"]));
             }
             set {
-                this["savepath"] = value;
+                this["LeagueConfigdir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Backupdir {
+            get {
+                return ((string)(this["Backupdir"]));
+            }
+            set {
+                this["Backupdir"] = value;
             }
         }
     }
