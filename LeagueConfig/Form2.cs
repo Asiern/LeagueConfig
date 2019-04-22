@@ -20,7 +20,6 @@ namespace LeagueConfig
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            Program.OpenDetailFormOnClose = true;
             Form1 Settings = new Form1();
             Settings.Show();
         }
@@ -112,5 +111,10 @@ namespace LeagueConfig
 
         }
 
+        private void help_Click(object sender, EventArgs e)
+        {
+            Form3 help = new Form3();
+            help.Show();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.Loadbtn = new System.Windows.Forms.Button();
             this.restorebtn = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@
             this.help.TabIndex = 4;
             this.help.Text = "?";
             this.help.UseVisualStyleBackColor = true;
+            this.help.Click += new System.EventHandler(this.help_Click);
             // 
             // notif
             // 
@@ -104,6 +106,7 @@
             this.Controls.Add(this.Settings);
             this.Controls.Add(this.restorebtn);
             this.Controls.Add(this.Loadbtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "LeagueConfig";
             this.Load += new System.EventHandler(this.Form2_Load);

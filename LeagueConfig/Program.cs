@@ -17,15 +17,9 @@ namespace LeagueConfig
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form2());
 
-            OpenDetailFormOnClose = false;
 
-            Application.Run(new Form1());
-
-            if (OpenDetailFormOnClose)
-            {
-                Application.Run(new Form2());
-            }
         }
     }
 }
