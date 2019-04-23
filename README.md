@@ -9,5 +9,5 @@ In game settings manager
 * [x] Save Settings
 * [x] Load Settings
 * [x] Restore Settings
-* [ ] Settings Button
-* [ ] Help Button
+* [x] Settings Button
+* [x] Help Button
