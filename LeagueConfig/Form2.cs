@@ -111,25 +111,38 @@ namespace LeagueConfig
 
             if (stage == "3")
             {
-                Restore();
-                savebtn.Text = "Load Config";
-                notif.Text = "Config Restored";
-                Properties.Settings.Default.stage = "1";
-
+                if (Properties.Settings.Default.settingspath == "")
+                {
+                    MessageBox.Show("League path not set");
+                }
+                else
+                {
+                    Restore();
+                    savebtn.Text = "Load Config";
+                    notif.Text = "Config Restored";
+                    Properties.Settings.Default.stage = "1";
+                }
             }
             else
             {
-                LoadConfig();
-                savebtn.Text = "Restore Config";
-                notif.Text = "Config Loaded";
-                Properties.Settings.Default.stage = "3";
+                if (Properties.Settings.Default.settingspath == "")
+                {
+                    MessageBox.Show("League path not set");
+                }
+                else
+                {
+                    LoadConfig();
+                    savebtn.Text = "Restore Config";
+                    notif.Text = "Config Loaded";
+                    Properties.Settings.Default.stage = "3";
+                }
             }
         }
    
 
     private void Form2_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.settingspath == null)
+            if (Properties.Settings.Default.settingspath == "")
             {
                 Form1 Settings = new Form1();
                 Settings.Show();
@@ -147,8 +160,15 @@ namespace LeagueConfig
 
         private void importbtn_Click(object sender, EventArgs e)
         {
-            Save();
-            notif.Text = "Settings Saved";
+            if (Properties.Settings.Default.settingspath == "")
+            {
+                MessageBox.Show("League path not set");
+            }
+            else
+            {
+                Save();
+                notif.Text = "Settings Saved";
+            }
         }
     }
 }

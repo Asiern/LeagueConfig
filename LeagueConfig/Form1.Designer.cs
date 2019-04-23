@@ -32,11 +32,12 @@
             this.Savebtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.settingspath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Savebtn
             // 
-            this.Savebtn.Location = new System.Drawing.Point(152, 114);
+            this.Savebtn.Location = new System.Drawing.Point(138, 100);
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(143, 38);
             this.Savebtn.TabIndex = 4;
@@ -46,7 +47,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(333, 42);
+            this.button1.Location = new System.Drawing.Point(305, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 25);
             this.button1.TabIndex = 0;
@@ -56,20 +57,33 @@
             // 
             // settingspath
             // 
-            this.settingspath.Location = new System.Drawing.Point(46, 45);
+            this.settingspath.Location = new System.Drawing.Point(12, 42);
             this.settingspath.Name = "settingspath";
             this.settingspath.Size = new System.Drawing.Size(269, 20);
             this.settingspath.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "PersistedSettings.json";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 181);
+            this.ClientSize = new System.Drawing.Size(429, 168);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Savebtn);
             this.Controls.Add(this.settingspath);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -82,6 +96,7 @@
         private System.Windows.Forms.Button Savebtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox settingspath;
+        private System.Windows.Forms.Label label1;
     }
 }
 

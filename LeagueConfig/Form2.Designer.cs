@@ -40,7 +40,7 @@
             // 
             this.Settings.Location = new System.Drawing.Point(12, 165);
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(70, 25);
+            this.Settings.Size = new System.Drawing.Size(85, 25);
             this.Settings.TabIndex = 2;
             this.Settings.Text = "Settings";
             this.Settings.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             // 
             // help
             // 
-            this.help.Location = new System.Drawing.Point(88, 165);
+            this.help.Location = new System.Drawing.Point(103, 165);
             this.help.Name = "help";
             this.help.Size = new System.Drawing.Size(30, 25);
             this.help.TabIndex = 4;
@@ -69,9 +69,9 @@
             // notif
             // 
             this.notif.Enabled = false;
-            this.notif.Location = new System.Drawing.Point(161, 170);
+            this.notif.Location = new System.Drawing.Point(172, 165);
             this.notif.Name = "notif";
-            this.notif.Size = new System.Drawing.Size(132, 20);
+            this.notif.Size = new System.Drawing.Size(121, 20);
             this.notif.TabIndex = 5;
             // 
             // importbtn
@@ -80,7 +80,7 @@
             this.importbtn.Name = "importbtn";
             this.importbtn.Size = new System.Drawing.Size(121, 33);
             this.importbtn.TabIndex = 6;
-            this.importbtn.Text = "Save Config";
+            this.importbtn.Text = "Import Config";
             this.importbtn.UseVisualStyleBackColor = true;
             this.importbtn.Click += new System.EventHandler(this.importbtn_Click);
             // 
@@ -94,7 +94,9 @@
             this.Controls.Add(this.help);
             this.Controls.Add(this.savebtn);
             this.Controls.Add(this.Settings);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "LeagueConfig";
             this.Load += new System.EventHandler(this.Form2_Load);

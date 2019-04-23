@@ -24,7 +24,12 @@ namespace LeagueConfig
 
         private void button2_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig");
+            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig/releases");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig#users-guide");
         }
     }
 }
