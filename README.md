@@ -5,9 +5,4 @@ In game settings manager
 
 
 
-# Summary
-* [x] Save Settings
-* [x] Load Settings
-* [x] Restore Settings
-* [x] Settings Button
-* [x] Help Button
+
