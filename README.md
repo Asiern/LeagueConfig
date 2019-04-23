@@ -1,5 +1,5 @@
 # LeagueConfig
-In game settings manager
+League of Legends game config manager. 
 
 # User's Guide
 
