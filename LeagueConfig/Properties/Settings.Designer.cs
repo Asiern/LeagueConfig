@@ -58,5 +58,17 @@ namespace LeagueConfig.Properties {
                 this["Backupdir"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string stage {
+            get {
+                return ((string)(this["stage"]));
+            }
+            set {
+                this["stage"] = value;
+            }
+        }
     }
 }
