@@ -4,6 +4,7 @@ In game settings manager
 # User's Guide
 
 Settup Guide: 
+
   1.Open LeagueConfig and lead to Settings. Click browse and select the lacation of your "PersistedSettings.json" file. Default Location C:\Riot Games\League of Legends\Config.
  
  
