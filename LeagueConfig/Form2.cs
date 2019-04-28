@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,14 +10,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Diagnostics;
 
 namespace LeagueConfig
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MaterialForm
     {
         public Form2()
         {
             InitializeComponent();
+
+            WebClient webClient = new WebClient();
+            if (!webClient.DownloadString("https://pastebin.com/raw/XahNKEeB").Contains("1.1"))
+            {
+                if (MessageBox.Show("Update available", "LeagueConfigUpdater", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig/releases");
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public void Settings_Click(object sender, EventArgs e)
@@ -105,7 +122,34 @@ namespace LeagueConfig
             }
         }
 
-        private void savebtn_Click(object sender, EventArgs e)
+   
+
+    private void Form2_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.settingspath == "")
+            {
+                Form1 Settings = new Form1();
+                Settings.Show();
+            }
+            Properties.Settings.Default.stage = "1";
+            Properties.Settings.Default.Save();
+
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.settingspath == "")
+            {
+                MessageBox.Show("League path not set");
+            }
+            else
+            {
+                Save();
+                notif.Text = "Settings Saved";
+            }
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             string stage = Properties.Settings.Default.stage;
 
@@ -138,37 +182,22 @@ namespace LeagueConfig
                 }
             }
         }
-   
 
-    private void Form2_Load(object sender, EventArgs e)
+        private void Settings_Click_1(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.settingspath == "")
-            {
-                Form1 Settings = new Form1();
-                Settings.Show();
-            }
-            Properties.Settings.Default.stage = "1";
-            Properties.Settings.Default.Save();
-
+            Form1 Settings = new Form1();
+            Settings.Show();
         }
 
-        private void help_Click(object sender, EventArgs e)
+        private void helpbtn_Click(object sender, EventArgs e)
         {
             Form3 help = new Form3();
             help.Show();
         }
 
-        private void importbtn_Click(object sender, EventArgs e)
+        private void notif_TextChanged(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.settingspath == "")
-            {
-                MessageBox.Show("League path not set");
-            }
-            else
-            {
-                Save();
-                notif.Text = "Settings Saved";
-            }
+
         }
     }
 }

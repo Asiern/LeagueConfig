@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,25 @@ using System.Windows.Forms;
 
 namespace LeagueConfig
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            settingspath.Text = Properties.Settings.Default.settingspath;
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            Program.OpenDetailFormOnClose = true;
+            this.Close();
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -27,17 +39,6 @@ namespace LeagueConfig
                 settingspath.Text = Properties.Settings.Default.settingspath;
                 Properties.Settings.Default.Save();
             }
-        }       
-
-        private void Savebtn_Click(object sender, EventArgs e)
-        {
-            Program.OpenDetailFormOnClose = true;
-            this.Close();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            settingspath.Text = Properties.Settings.Default.settingspath;
         }
     }
 }

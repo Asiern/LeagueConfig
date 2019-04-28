@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,26 +11,26 @@ using System.Windows.Forms;
 
 namespace LeagueConfig
 {
-    public partial class Form3 : Form
+    public partial class Form3 : MaterialForm
     {
         public Form3()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig#users-guide");
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void materialFlatButton3_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig/releases");
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig#users-guide");
         }
     }
 }
