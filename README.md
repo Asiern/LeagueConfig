@@ -1,6 +1,14 @@
 # LeagueConfig
 League of Legends game config manager. 
 
+![alt text](https://github.com/PapaElGunmen/LeagueConfig/blob/master/LC.png)
+
+# Features
+1. Import League Of Legends Game Configuration file.
+2. Load Configuration files to your account.
+3. Restore Previous Configuration file.
+4. Automatic Search For Updates.
+
 # User's Guide
 
 Settup Guide: 
