@@ -20,17 +20,17 @@ namespace LeagueConfig
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig#users-guide");
+            System.Diagnostics.Process.Start("https://github.com/Asiern/LeagueConfig#users-guide");
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig");
+            System.Diagnostics.Process.Start("https://github.com/Asiern/LeagueConfig");
         }
 
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/LeagueConfig/releases");
+            System.Diagnostics.Process.Start("https://github.com/Asiern/LeagueConfig/releases");
         }
     }
 }
